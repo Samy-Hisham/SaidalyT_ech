@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.signup.RegisterFragment">
+
+    <ImageView
+        android:id="@+id/background"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/ic_splash"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/background" />
+
+    <EditText
+        android:id="@+id/edit_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_32sdp"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_person"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/name"
+        android:inputType="text"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/icon" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_name"
+        app:layout_constraintStart_toStartOf="@+id/edit_name"
+        app:layout_constraintTop_toTopOf="@+id/edit_name" />
+
+    <EditText
+        android:id="@+id/edit_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_name" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_email"
+        app:layout_constraintStart_toStartOf="@+id/edit_email"
+        app:layout_constraintTop_toTopOf="@+id/edit_email" />
+
+    <EditText
+        android:id="@+id/edit_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
+        app:layout_constraintStart_toStartOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_pass" />
+
+    <EditText
+        android:id="@+id/edit_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_phone"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/phone"
+        android:inputType="number"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_pass" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_phone"
+        app:layout_constraintStart_toStartOf="@+id/edit_phone"
+        app:layout_constraintTop_toTopOf="@+id/edit_phone" />
+
+    <Spinner
+        android:id="@+id/spinner_gender"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/bg_item_register"        android:paddingStart="@dimen/_28sdp"
+        android:padding="@dimen/_8sdp"
+        android:entries="@array/spinnergender"
+        android:textColor="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_phone"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:src="@drawable/ic_gender"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner_gender" />
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_50sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_gender"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/spinner_gender" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/ic_arrow_down"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner_gender"
+        app:layout_constraintEnd_toEndOf="@+id/spinner_gender"
+        app:layout_constraintTop_toTopOf="@id/spinner_gender" />
+<!--    <EditText-->
+<!--        android:id="@+id/edit_gen"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginHorizontal="@dimen/_22sdp"-->
+<!--        android:layout_marginTop="@dimen/_12sdp"-->
+<!--        android:background="@drawable/edit_shape"-->
+<!--        android:drawableStart="@drawable/ic_email"-->
+<!--        android:drawablePadding="@dimen/_10sdp"-->
+<!--        android:hint="@string/email"-->
+<!--        android:inputType="textEmailAddress"-->
+<!--        android:padding="@dimen/_8ssp"-->
+<!--        android:textColorHint="@color/gray"-->
+<!--        android:textSize="@dimen/_12ssp"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/edit_phone" />-->
+
+    <EditText
+        android:id="@+id/edit_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_address"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/address"
+        android:inputType="text"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_gender" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_address"
+        app:layout_constraintStart_toStartOf="@+id/edit_address"
+        app:layout_constraintTop_toTopOf="@+id/edit_address" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_address"
+        app:layout_constraintStart_toStartOf="@+id/edit_address"
+        app:layout_constraintTop_toTopOf="@+id/edit_address" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_signUp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_24sdp"
+        android:background="@drawable/edit_button"
+        android:text="@string/sign_Up"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/Main_Color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_address"
+        app:layout_constraintWidth_percent="0.5" />
+
+    <ImageView
+        android:id="@+id/background_down"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_50sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/background_down"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

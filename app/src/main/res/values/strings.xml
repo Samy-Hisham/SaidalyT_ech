@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Saidaly Tech</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="loading">Loading…</string>
+    <string name="saidaly_tech">Saidaly Teach</string>
+    <string name="to_continue_login_now">To Continue, Login Now</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="register_now">Register Now</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="address">Address</string>
+    <string name="sign_Up">Sign Up</string>
+    <string name="search">search</string>
+    <string name="required">required</string>
+
+    <string-array name="spinnergender">
+        <item>Gender</item>
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+</resources>
