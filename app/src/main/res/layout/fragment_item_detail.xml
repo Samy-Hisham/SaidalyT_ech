@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.itemdetail.ItemDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/img_item"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/fake" />
+
+        <TextView
+            android:id="@+id/txt_name_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/Name"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_item" />
+
+        <TextView
+            android:id="@+id/name_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_name_item"
+            app:layout_constraintTop_toBottomOf="@id/img_item"
+            tools:text="ACC 200mg 20 sachets" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/Main_Color"
+            app:layout_constraintTop_toBottomOf="@id/name_item" />
+
+        <TextView
+            android:id="@+id/txt_composition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/composition"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_item" />
+
+        <TextView
+            android:id="@+id/name_composition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_composition"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_composition"
+            app:layout_constraintTop_toTopOf="@+id/txt_composition"
+            tools:text="acetylcysteine 200mg" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/Main_Color"
+            app:layout_constraintTop_toBottomOf="@id/name_composition" />
+
+
+        <TextView
+            android:id="@+id/txt_activeIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="ActiveIngredient:"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_composition" />
+
+        <TextView
+            android:id="@+id/activeIngredient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_activeIngredient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txt_activeIngredient"
+            app:layout_constraintTop_toTopOf="@id/txt_activeIngredient"
+            tools:text="ACETYLCYSTEINE" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@color/Main_Color"
+            app:layout_constraintTop_toBottomOf="@id/activeIngredient" />
+
+        <TextView
+            android:id="@+id/txt_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/company"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/activeIngredient" />
+
+        <TextView
+            android:id="@+id/name_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_company"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_company"
+            app:layout_constraintTop_toTopOf="@id/txt_company"
+            tools:text="MINA PHARM > HEXAL AG Germany" />
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/Main_Color"
+            app:layout_constraintTop_toBottomOf="@id/name_company" />
+
+
+        <TextView
+            android:id="@+id/txt_pamphlet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/pamlat"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/name_company" />
+
+        <TextView
+            android:id="@+id/pamphlet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_pamphlet"
+            tools:text="Description\t\r\n Acetylcysteine (also known as N-acetylcysteine or N-acetyl-L-cysteine or NAC) is primarily used as a mucolytic agent and in the management of acetaminophen poisoning. It is a derivative of cysteine with an acetyl group attached to the amino group of cysteine.\r\n\r\nMechanism of action\tAcetylcysteine protects against acetaminophen overdose-induced hepatotoxicity by maintaining or restoring hepatic concentrations of glutathione. It does this by producing the glutathione precursor L-cysteine. Glutathione is required to inactivate an intermediate metabolite (N-acetyl-p-benzoquinoneimine or NAPQI) of acetaminophen that is thought to be hepatotoxic. In acetaminophen overdose cases, excessive quantities of this metabolite are formed because the primary metabolic (glucuronide and sulfate conjugation) pathways become saturated. Acetylcysteine may act by reducing the metabolite to the parent compound and/or by providing sulfhydryl for conjugation of the metabolite. Experimental eviden" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/Main_Color"
+            app:layout_constraintTop_toBottomOf="@id/pamphlet" />
+
+        <TextView
+            android:id="@+id/txt_dosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:text="@string/dosage"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pamphlet" />
+
+        <TextView
+            android:id="@+id/dosage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/txt_dosage"
+            tools:text="Adult\r\nPulmonary Disease\r\nFacilitation of expectoration via mucolysis\r\n\r\n5-10 mL of 10% or 20% solution by nebulization q6-8hr PRN\r\n\r\nDiagnostic Bronchography\r\n1-2 mL of 20% solution or 2-4 mL of 10% solution administered 2-3 times by nebulization or by intratracheal instillation before procedure\r\n\r\nAcetaminophen Overdose\r\nSee separate drug monograph, acetylcysteine (antidote)\r\n\r\nContrast Agent-Associated Nephrotoxicity (Off-label)\r\nPrevention\r\n\r\n600 mg PO q12hr for 2 days on day before and day of contrast agent administration\r\n\r\nKeratoconjunctivitis Sicca (Off-label)\r\n1 drop of 10% solution in eye(s) q6-8hr\r\n\r\nDosing Considerations\r\nDirect instillation: 1-2 mL of 10% or 20% solution q1hr PRN\r\nRoutine nursing care of patients with tracheotomy: 1-2 mL of 10% or 20% solution q1-4hr by direct instillation into tracheotomy\r\n\r\nInstillation into segment of bronchopulmonary tree via small plastic catheter into trachea (under local anesthesia and direct vision): 2-5 mL of 20% solution via syringe connected to catheter\r\n\r\nInstillation via percutaneous intratracheal catheter: 1-2 mL of 20% solution or 2-4 mL of 10% solution q1-4hr via syringe connected to catheter\r\n\r\nAdministration\r\nAdminister aerosolized bronchodilator 10-15 minutes before administering acetylcysteine via nebulization\r\nNebulizer solution may also be administered PO\r\n\r\n\r\nPediatric\r\nPulmonary Disease\r\nFacilitation of expectoration via mucolysis\r\n\r\n1-11 months: 1-2 mL of 20% solution or 2-4 mL of 10% solution by nebulization q6-8hr PRN\r\n\r\n1-11 years: 3-5 mL of 20% solution or 6-10 mL of 10% solution by nebulization q6-8hr PRN\r\n\r\n>12 years: 5-10 mL of 10% or 20% solution by nebulization q6-8hr PRN\r\n\r\nAcetaminophen Overdose\r\nSee separate drug monograph, acetylcysteine (antidote)\r\n\r\nKeratoconjunctivitis Sicca (Off-label)\r\n1 drop of 10% solution in eye(s) q6-8hr" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:background="@color/Main_Color"
+            app:layout_constraintTop_toBottomOf="@id/dosage"
+            tools:layout_editor_absoluteX="5dp" />
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/_8sdp"
+            android:text="@string/price"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dosage" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_price"
+            app:layout_constraintStart_toEndOf="@id/txt_price"
+            app:layout_constraintTop_toTopOf="@id/txt_price"
+            tools:text="25.5" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/add_cart"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/add_to_cart"
+            app:layout_constraintEnd_toEndOf="@+id/view2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_price"
+            app:layout_constraintWidth_percent="0.8" />
+
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

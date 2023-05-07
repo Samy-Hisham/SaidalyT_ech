@@ -16,6 +16,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/Main_Color"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/background_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background_down"
+        app:layout_constraintTop_toBottomOf="@+id/txt_register" />
+
     <ImageView
         android:id="@+id/icon"
         android:layout_width="@dimen/_120sdp"
@@ -94,6 +105,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_email" />
+
+    <ImageView
+        android:id="@+id/show_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_pass" />
+
+    <ImageView
+        android:id="@+id/hide_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:visibility="gone"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_pass" />
 
     <View
         android:layout_width="1dp"

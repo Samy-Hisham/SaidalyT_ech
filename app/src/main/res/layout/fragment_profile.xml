@@ -16,29 +16,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/profile"
-        android:layout_width="@dimen/_90sdp"
-        android:layout_height="@dimen/_90sdp"
-        android:layout_marginTop="@dimen/_80sdp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_account_circle_blue_24"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
-        android:text="Menna Seif"
+        android:layout_marginTop="32dp"
+        tools:text="Menna Seif"
         android:textColor="@color/black"
         android:textSize="@dimen/_22ssp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/profile" />
+        app:layout_constraintTop_toBottomOf="@id/background"
+        />
 
     <TextView
         android:id="@+id/txt_email"
@@ -46,7 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        android:text="mennaSeif934@gmail.com"
+        tools:text="mennaSeif934@gmail.com"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/email"
@@ -69,7 +59,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        android:text="18ST:masrElgideda-cairo"
+        tools:text="18ST:masrElgideda-cairo"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/address"
@@ -105,7 +95,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        android:text="01558280211"
+        tools:text="01558280211"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/phone"
@@ -129,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        android:text="Male"
+        tools:text="Male"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/gender"
@@ -142,11 +132,10 @@
         android:text="@string/saidaly_tech"
         android:textColor="@color/Main_Color"
         android:textSize="@dimen/_24ssp"
-        app:layout_constraintEnd_toEndOf="parent"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/background_down"
-        />
+        app:layout_constraintTop_toTopOf="@id/background_down" />
 
     <ImageView
         android:id="@+id/background_down"

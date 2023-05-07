@@ -1,13 +1,16 @@
 package com.android.saidalytech.ui.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.android.saidalytech.R
 import com.android.saidalytech.databinding.FragmentProfileBinding
+import com.android.saidalytech.uitls.MySharedPreference
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
@@ -24,5 +27,20 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentProfileBinding.bind(view)
+
+        showData()
+    }
+
+    private fun showData() {
+
+        binding.apply {
+            MySharedPreference.apply {
+                txtName.text = getUserName()
+                txtEmail.text = getUserEmail()
+                txtAddress.text = getUserAddress()
+                txtPhone.text = getUserPhone()
+                txtGender.text = getUserGender()
+            }
+        }
     }
 }

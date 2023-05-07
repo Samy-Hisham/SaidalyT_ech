@@ -16,6 +16,23 @@
     <string name="sign_Up">Sign Up</string>
     <string name="search">search</string>
     <string name="required">required</string>
+    <string name="age">Age</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="not_match">confirm password not match</string>
+    <string name="Successful_Register">Successful Register</string>
+    <string name="price">Price:</string>
+    <string name="dosage">Dosage:</string>
+    <string name="pamlat">Pamlat:</string>
+    <string name="company">Company:</string>
+    <string name="composition">composition:</string>
+    <string name="Name">Name:</string>
+    <string name="buy_now">Buy now</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="quantity">Quantity</string>
+    <string name="note">note...</string>
+    <string name="total">Total</string>
+    <string name="add_more">Add More</string>
+    <string name="previous_order">Previous Order</string>
 
     <string-array name="spinnergender">
         <item>Gender</item>

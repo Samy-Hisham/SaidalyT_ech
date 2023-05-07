@@ -31,7 +31,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_22sdp"
-        android:layout_marginTop="@dimen/_32sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:background="@drawable/bg_item_register"
         android:drawableStart="@drawable/ic_person"
         android:drawablePadding="@dimen/_10sdp"
@@ -59,7 +59,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_22sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_email"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_email"
         android:drawablePadding="@dimen/_10sdp"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
@@ -85,7 +86,8 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_22sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_lock"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_lock"
         android:drawablePadding="@dimen/_10sdp"
         android:hint="@string/password"
         android:inputType="textPassword"
@@ -96,7 +98,68 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_email" />
 
+    <ImageView
+        android:id="@+id/show_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_pass" />
+
+    <ImageView
+        android:id="@+id/hide_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/ic_eye"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_pass" />
+
+    <EditText
+        android:id="@+id/edit_confirm_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_lock"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/confirm_password"
+        android:inputType="textPassword"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_pass" />
+
+    <ImageView
+        android:id="@+id/show_confirmed_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/ic_eye"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_confirm_pass"
+        app:layout_constraintEnd_toEndOf="@+id/edit_confirm_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_confirm_pass" />
+
+    <ImageView
+        android:id="@+id/hide_confirmed_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:src="@drawable/ic_eye"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_confirm_pass"
+        app:layout_constraintEnd_toEndOf="@+id/edit_confirm_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_confirm_pass" />
+
     <View
+        android:id="@+id/view"
         android:layout_width="1dp"
         android:layout_height="21dp"
         android:layout_marginStart="@dimen/_28sdp"
@@ -105,13 +168,23 @@
         app:layout_constraintStart_toStartOf="@+id/edit_pass"
         app:layout_constraintTop_toTopOf="@+id/edit_pass" />
 
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_confirm_pass"
+        app:layout_constraintStart_toStartOf="@+id/edit_confirm_pass"
+        app:layout_constraintTop_toTopOf="@+id/edit_confirm_pass" />
+
     <EditText
         android:id="@+id/edit_phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_22sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_phone"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_phone"
         android:drawablePadding="@dimen/_10sdp"
         android:hint="@string/phone"
         android:inputType="number"
@@ -120,7 +193,7 @@
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_pass" />
+        app:layout_constraintTop_toBottomOf="@id/edit_confirm_pass" />
 
     <View
         android:layout_width="1dp"
@@ -131,19 +204,47 @@
         app:layout_constraintStart_toStartOf="@+id/edit_phone"
         app:layout_constraintTop_toTopOf="@+id/edit_phone" />
 
+    <EditText
+        android:id="@+id/edit_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_22sdp"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_address"
+        android:drawablePadding="@dimen/_10sdp"
+        android:hint="@string/address"
+        android:inputType="text"
+        android:padding="@dimen/_8ssp"
+        android:textColorHint="@color/gray"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_age" />
+
+    <View
+        android:layout_width="1dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="@dimen/_28sdp"
+        android:background="@color/Main_Color"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_address"
+        app:layout_constraintStart_toStartOf="@+id/edit_address"
+        app:layout_constraintTop_toTopOf="@+id/edit_address" />
+
     <Spinner
         android:id="@+id/spinner_gender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_22sdp"
         android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/bg_item_register"        android:paddingStart="@dimen/_28sdp"
-        android:padding="@dimen/_8sdp"
+        android:background="@drawable/bg_item_register"
         android:entries="@array/spinnergender"
+        android:padding="@dimen/_8sdp"
+        android:paddingStart="@dimen/_28sdp"
         android:textColor="@color/gray"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_phone"
+        app:layout_constraintTop_toBottomOf="@+id/edit_address"
         tools:ignore="RtlSymmetry" />
 
     <ImageView
@@ -174,65 +275,49 @@
         app:layout_constraintBottom_toBottomOf="@+id/spinner_gender"
         app:layout_constraintEnd_toEndOf="@+id/spinner_gender"
         app:layout_constraintTop_toTopOf="@id/spinner_gender" />
-<!--    <EditText-->
-<!--        android:id="@+id/edit_gen"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginHorizontal="@dimen/_22sdp"-->
-<!--        android:layout_marginTop="@dimen/_12sdp"-->
-<!--        android:background="@drawable/edit_shape"-->
-<!--        android:drawableStart="@drawable/ic_email"-->
-<!--        android:drawablePadding="@dimen/_10sdp"-->
-<!--        android:hint="@string/email"-->
-<!--        android:inputType="textEmailAddress"-->
-<!--        android:padding="@dimen/_8ssp"-->
-<!--        android:textColorHint="@color/gray"-->
-<!--        android:textSize="@dimen/_12ssp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/edit_phone" />-->
 
     <EditText
-        android:id="@+id/edit_address"
+        android:id="@+id/edit_age"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/_22sdp"
         android:layout_marginTop="@dimen/_12sdp"
-        android:background="@drawable/bg_item_register"        android:drawableStart="@drawable/ic_address"
+        android:background="@drawable/bg_item_register"
+        android:drawableStart="@drawable/ic_address"
         android:drawablePadding="@dimen/_10sdp"
-        android:hint="@string/address"
-        android:inputType="text"
+        android:hint="@string/age"
+        android:inputType="number"
         android:padding="@dimen/_8ssp"
         android:textColorHint="@color/gray"
         android:textSize="@dimen/_12ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinner_gender" />
+        app:layout_constraintTop_toBottomOf="@id/edit_phone" />
 
     <View
         android:layout_width="1dp"
         android:layout_height="21dp"
         android:layout_marginStart="@dimen/_28sdp"
         android:background="@color/Main_Color"
-        app:layout_constraintBottom_toBottomOf="@+id/edit_address"
-        app:layout_constraintStart_toStartOf="@+id/edit_address"
-        app:layout_constraintTop_toTopOf="@+id/edit_address" />
+        app:layout_constraintBottom_toBottomOf="@+id/edit_age"
+        app:layout_constraintStart_toStartOf="@+id/edit_age"
+        app:layout_constraintTop_toTopOf="@+id/edit_age" />
 
     <View
         android:layout_width="1dp"
         android:layout_height="21dp"
         android:layout_marginStart="@dimen/_28sdp"
         android:background="@color/Main_Color"
-        app:layout_constraintBottom_toBottomOf="@+id/edit_address"
-        app:layout_constraintStart_toStartOf="@+id/edit_address"
-        app:layout_constraintTop_toTopOf="@+id/edit_address" />
+        app:layout_constraintBottom_toBottomOf="@+id/edit_age"
+        app:layout_constraintStart_toStartOf="@+id/edit_age"
+        app:layout_constraintTop_toTopOf="@+id/edit_age" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_signUp"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_18sdp"
         android:background="@drawable/edit_button"
         android:text="@string/sign_Up"
         android:textColor="@color/white"
@@ -240,7 +325,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_address"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_gender"
         app:layout_constraintWidth_percent="0.5" />
 
     <ImageView
@@ -252,5 +337,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/icon" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
