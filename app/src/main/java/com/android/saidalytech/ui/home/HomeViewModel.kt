@@ -82,64 +82,66 @@ class HomeViewModel
         }
     }
 
-    ///////
-//    private var _shoppingCartItems = mutableListOf<ItemX>()
-//    val shoppingCartItems get() = _shoppingCartItems.toList()
-//
-//    fun addItemToCart(item: ModelDataItem){
-//        val hasProduct = _shoppingCartItems.any { itemX ->
-//            itemX.itemId == item.itemId
-//        }
-//
-//      if (hasProduct){
-//          val currentClickedItem = _shoppingCartItems.find { itemX ->
-//              itemX.itemId == item.itemId
-//          }
-//          currentClickedItem?.qty?.plus(1)
-//          return
-//      }
-//
-//        val newItemToAdd = ItemX(
-//            item.itemId,
-//            "",
-//            price = item.salesPrice,
-//            qty = 1
-//        )
-//        _shoppingCartItems.add(newItemToAdd)
-//        return
-//    }
-
-    private var _shoppingCartItems = mutableListOf<ModelOrder>()
+    /////
+    private var _shoppingCartItems = mutableListOf<ItemX>()
     val shoppingCartItems get() = _shoppingCartItems.toList()
 
     fun addItemToCart(item: ModelDataItem){
         val hasProduct = _shoppingCartItems.any { itemX ->
-            itemX.id_Item == item.itemId
+            itemX.itemId == item.itemId
         }
 
-        if (hasProduct){
-            val currentClickedItem = _shoppingCartItems.find { itemX ->
-                itemX.id_Item == item.itemId
-            }
-            currentClickedItem?.quantity_Item?.plus(1)
-            return
-        }
+      if (hasProduct){
+          val currentClickedItem = _shoppingCartItems.find { itemX ->
+              itemX.itemId == item.itemId
+          }
+          currentClickedItem?.qty?.plus(1)
+          return
+      }
 
-        val newItemToAdd = ModelOrder(
+        val newItemToAdd = ItemX(
             item.itemId,
-            item.itemName,
-            price_Item = item.salesPrice,
-            quantity_Item = 1,
-            image_Item = item.imageName
+            "",
+            itemImage = item.imageName,
+            price = item.salesPrice,
+            qty = 1,
+            itemName = item.itemName
         )
         _shoppingCartItems.add(newItemToAdd)
         return
     }
 
+//    private var _shoppingCartItems = mutableListOf<ModelDataItem>()
+//    val shoppingCartItems get() = _shoppingCartItems.toList()
+//
+//    fun addItemToCart(item: ModelDataItem): ModelAddOrder {
+//        val hasProduct = _shoppingCartItems.any { modelDataItem ->
+//            modelDataItem.itemId == item.itemId
+//        }
+//
+//        if (hasProduct){
+//            val currentClickedItem = _shoppingCartItems.find { modelDataItem ->
+//                modelDataItem.itemId == item.itemId
+//            }
+//            currentClickedItem?.?.plus(1)
+//            return
+//        }
+//
+//        val newItemToAdd = ModelOrder(
+//            item.itemId,
+//            item.itemName,
+//            price_Item = item.salesPrice,
+//            quantity_Item = 1,
+//            image_Item = item.imageName
+//        )
+//        _shoppingCartItems.add(newItemToAdd)
+//        return
+//    }
+
     @RequiresApi(Build.VERSION_CODES.N)
     fun removeItemFromCartByItemId(itemId: Int){
         _shoppingCartItems.removeIf { item ->
-            item.id_Item == itemId
+            item.itemId == itemId
         }
         return
     }

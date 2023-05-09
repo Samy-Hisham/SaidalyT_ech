@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.databinding.FragmentProfileBinding
 import com.android.saidalytech.uitls.MySharedPreference
@@ -29,7 +30,16 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.bind(view)
 
         showData()
+//        onClick()
     }
+
+//    private fun onClick() {
+//
+//        binding.logout.setOnClickListener {
+//            MySharedPreference.setUserTOKEN(null.toString())
+//            findNavController().navigate(R.id.action_profileFragment_to_splashFragment)
+//        }
+//    }
 
     private fun showData() {
 

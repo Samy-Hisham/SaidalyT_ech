@@ -27,13 +27,14 @@ class AdapterRecyclerItems : RecyclerView.Adapter<AdapterRecyclerItems.Holder>()
         return Holder(binding)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
         val data = list?.get(position)
 
         holder.binding.apply {
             txtItem.text = data?.itemName
-            txtPrice.text = data?.salesPrice.toString()
+            txtPrice.text = "${data?.salesPrice.toString()} EGP"
         }
 
         Glide.with(holder.itemView.context)
@@ -44,11 +45,22 @@ class AdapterRecyclerItems : RecyclerView.Adapter<AdapterRecyclerItems.Holder>()
     override fun getItemCount(): Int = list?.size ?: 0
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setData(data: List<ModelDataItem>) {
-        list?.clear()
-        list?.addAll(data)
-        notifyDataSetChanged()
-    }
+//    fun setData(data: List<ModelDataItem>) {
+//        list?.clear()
+//        list?.addAll(data)
+//        notifyDataSetChanged()
+//    }
+
+//    fun searchBy(query: String){
+//        if (query.isNotBlank()){
+//            list?.filter {
+//                //Delay
+//                it.itemName.lowercase() == query.lowercase()
+//            }.also {
+//                notifyDataSetChanged()
+//            }
+//        }
+//    }
 
     inner class Holder(val binding: ItemRecycleBinding) : RecyclerView.ViewHolder(binding.root) {
 

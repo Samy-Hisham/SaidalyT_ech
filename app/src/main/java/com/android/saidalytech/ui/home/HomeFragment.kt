@@ -1,17 +1,13 @@
 package com.android.saidalytech.ui.home
 
-import android.content.ContentValues.TAG
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.adapter.AdapterRecycleTabs
@@ -38,8 +34,7 @@ class HomeFragment : Fragment() {
     var data: ModelData? = null
     var id: Int? = null
 
-    val list: MutableList<ModelDataItem>? = null
-
+    private lateinit var list : MutableList<ModelDataItem>
 
     var flag: Boolean = false
 
@@ -97,18 +92,21 @@ class HomeFragment : Fragment() {
 
 //        binding.editSearch.doOnTextChanged { text, start, before, count ->
 //            filterData(text.toString())
+////            adapterRecyclerItems.searchBy(text.toString())
 //        }
     }
 
-//    fun search(query: String): List<ModelDataItem> {
-//        return data!!.filter {
-//            it.itemName.contains(query, ignoreCase = true)
-//        }
-//    }
 
+//    @SuppressLint("NotifyDataSetChanged")
 //    fun filterData(query: String) {
-//        val filteredData = list?.filter { it.itemName.uppercase().contains(query, ignoreCase = true) }
-//        adapterRecyclerItems.setData(filteredData!!)
+//        val filteredData = list?.filter {
+//            it.itemName.lowercase().contains(query.lowercase(), ignoreCase = true)
+//        }
+//
+//        filteredData?.let {
+//            adapterRecyclerItems.setData(it)
+//            adapterRecyclerItems.notifyDataSetChanged()
+//        }
 //    }
 
     private fun getDataById(item: ModelAllCategoriesItem) {

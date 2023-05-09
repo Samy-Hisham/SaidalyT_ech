@@ -4,5 +4,6 @@ data class ItemX(
     val itemId: Int,
     val notes: String,
     val price: Double,
-    val qty: Int
-)
+    val qty: Int,
+    var itemImage : String = "",
+var itemName: String = "")

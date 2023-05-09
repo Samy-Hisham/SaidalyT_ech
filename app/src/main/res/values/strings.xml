@@ -10,7 +10,7 @@
     <string name="password">Password</string>
     <string name="login">Login</string>
     <string name="register_now">Register Now</string>
-    <string name="name">Name</string>
+    <string name="name">Name:</string>
     <string name="phone">Phone</string>
     <string name="address">Address</string>
     <string name="sign_Up">Sign Up</string>
@@ -28,11 +28,15 @@
     <string name="Name">Name:</string>
     <string name="buy_now">Buy now</string>
     <string name="add_to_cart">Add to Cart</string>
-    <string name="quantity">Quantity</string>
+    <string name="quantity">Quantity:</string>
     <string name="note">note...</string>
-    <string name="total">Total</string>
+    <string name="note2">Note:</string>
+
+    <string name="total">Total:</string>
     <string name="add_more">Add More</string>
     <string name="previous_order">Previous Order</string>
+    <string name="date">Date:</string>
+    <string name="detail_order">Detail Order</string>
 
     <string-array name="spinnergender">
         <item>Gender</item>

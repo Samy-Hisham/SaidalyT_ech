@@ -12,6 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.adapter.AdapterItemRecycle
 import com.android.saidalytech.databinding.FragmentAddOrderBinding
+import com.android.saidalytech.model.ItemX
 import com.android.saidalytech.model.ModelItemDetail
 import com.android.saidalytech.model.ModelOrder
 import com.android.saidalytech.ui.home.HomeViewModel
@@ -50,7 +51,7 @@ class AddOrderFragment : Fragment() {
 
     private fun observe() {
 
-        adapter.setList(sharedViewModel.shoppingCartItems as MutableList<ModelOrder>)
+        adapter.setList(sharedViewModel.shoppingCartItems)
         binding.recycle.adapter = adapter
     }
 
@@ -70,10 +71,11 @@ class AddOrderFragment : Fragment() {
 
         binding.buy.setOnClickListener {
 
-//            orderViewModel.sendOrder(sharedViewModel.shoppingCartItems)
+            orderViewModel.sendOrder(sharedViewModel.shoppingCartItems)
 
             orderViewModel.successMD.observe(viewLifecycleOwner) {
-                
+                showToast(requireContext(), "Done")
+
             }
             orderViewModel.failureMD.observe(viewLifecycleOwner) {
                 showToast(requireContext(), it)

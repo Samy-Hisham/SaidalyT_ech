@@ -7,8 +7,6 @@ interface WebServices {
 
     @POST("Authorization/LogIn")
     suspend fun login(
-//        @Field("email") email: String,
-//        @Field("password") password: String
         @Body modelLogin: ModelLogin,
     ): ModelLoginRegisterResponses
 
@@ -21,7 +19,6 @@ interface WebServices {
     suspend fun getItems(
         @Query("data") data: String,
     ): ModelData
-
 
     @GET("Category/GetAllCategoreis")
     suspend fun getAllCategories(
@@ -39,11 +36,6 @@ interface WebServices {
     ): ModelPreOrder
 
     @POST("Order/AddOrder")
-    suspend fun sendOrder(model: ModelAddOrder): ModelAddOrder
-
-//    @GET("Item/GetItemsWithCategoryId/{id}")
-//    suspend fun getCategoryById(
-//        @Path("id") id: Int,
-//    ): ModelData
+    suspend fun sendOrder(@Body model: ModelAddOrder): ModelAddOrder
 
 }

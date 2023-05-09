@@ -10,7 +10,7 @@ import com.bumptech.glide.Glide
 
 class AdapterItemSelectedRecycle : RecyclerView.Adapter<AdapterItemSelectedRecycle.Holder>() {
 
-    var list: MutableList<Item>?= null
+    var list: MutableList<Item>? = null
 
     @SuppressLint("NotifyDataSetChanged")
     @JvmName("setList1")
@@ -25,17 +25,22 @@ class AdapterItemSelectedRecycle : RecyclerView.Adapter<AdapterItemSelectedRecyc
         return Holder(binding)
     }
 
-    @SuppressLint("NotifyDataSetChanged")
+    @SuppressLint("NotifyDataSetChanged", "SetTextI18n")
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
         val data = list?.get(position)
 
         holder.binding.apply {
             txtName.text = data?.name
-            txtNote.text = data?.notes
+
+            if (data?.notes.equals("string")) {
+                txtNote.text = " "
+            } else {
+                txtNote.text = data?.notes
+            }
             txtQuantity.text = data?.qty.toString()
-            txtPrice.text = data?.price.toString()
-            txtTotal.text = data?.total.toString()
+            txtPrice.text = "${data?.price.toString()} EGP"
+            txtTotal.text = "${data?.total.toString()} EGP"
         }
 
         Glide.with(holder.itemView.context)

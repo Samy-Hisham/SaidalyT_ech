@@ -25,15 +25,39 @@
             tools:src="@drawable/ic_baseline_shopping_cart_24" />
 
         <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:textColor="@color/Main_Color"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintTop_toTopOf="@id/img_item"
+            android:text="@string/name"
+            />
+
+        <TextView
             android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_16sdp"
+            android:layout_marginStart="@dimen/_12sdp"
             android:textColor="@color/black"
-            android:textSize="@dimen/_16sdp"
-            app:layout_constraintStart_toEndOf="@id/img_item"
+            android:textSize="@dimen/_14sdp"
+            app:layout_constraintStart_toEndOf="@id/name"
             app:layout_constraintTop_toTopOf="@id/img_item"
             tools:text="Panadol" />
+
+        <TextView
+            android:id="@+id/quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/Main_Color"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/txt_name"
+            app:layout_constraintStart_toEndOf="@id/img_item"
+            android:text="@string/quantity" />
 
         <TextView
             android:id="@+id/txt_quantity"
@@ -44,8 +68,21 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintTop_toBottomOf="@id/txt_name"
-            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintStart_toEndOf="@id/quantity"
             tools:text="23" />
+
+        <TextView
+            android:id="@+id/price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/Main_Color"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/txt_quantity"
+            app:layout_constraintStart_toEndOf="@id/img_item"
+            android:text="@string/price"
+            />
 
         <TextView
             android:id="@+id/txt_price"
@@ -56,8 +93,20 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintTop_toBottomOf="@id/txt_quantity"
-            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintStart_toEndOf="@id/price"
             tools:text="65.00" />
+
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/Main_Color"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/txt_price"
+            app:layout_constraintStart_toEndOf="@id/img_item"
+            android:text="@string/total" />
 
         <TextView
             android:id="@+id/txt_total"
@@ -68,8 +117,21 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintTop_toBottomOf="@id/txt_price"
-            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintStart_toEndOf="@id/total"
             tools:text="65.00" />
+
+        <TextView
+            android:id="@+id/note"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:textColor="@color/Main_Color"
+            android:textSize="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/txt_total"
+            app:layout_constraintStart_toEndOf="@id/img_item"
+            android:text="@string/note2"
+            />
 
         <TextView
             android:id="@+id/txt_note"
@@ -80,7 +142,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_12sdp"
             app:layout_constraintTop_toBottomOf="@id/txt_total"
-            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintStart_toEndOf="@id/note"
             tools:text="er tereq werwe defgs w" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

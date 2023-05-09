@@ -2,10 +2,12 @@ package com.android.saidalytech.ui.order
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.android.saidalytech.model.ItemX
 import com.android.saidalytech.model.ModelAddOrder
 import com.android.saidalytech.model.ModelFailure
 import com.android.saidalytech.network.SingleLiveEvent
 import com.android.saidalytech.network.WebServices
+import com.android.saidalytech.uitls.MySharedPreference
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -25,12 +27,14 @@ class OrderViewModel
     private var _progress = SingleLiveEvent<Boolean>()
     val progressMD get() = _progress
 
-    fun sendOrder(model: ModelAddOrder) {
+    fun sendOrder(items: List<ItemX>) {
         viewModelScope.launch(Dispatchers.IO) {
             progressMD.postValue(true)
 
             try {
-                val data = webServices.sendOrder(model)
+
+                val newOrder = ModelAddOrder(customerId = "10", items = items, userId = MySharedPreference.getUserId().toString())
+                val data = webServices.sendOrder(newOrder)
                 successMD.postValue(data)
                 progressMD.postValue(false)
 

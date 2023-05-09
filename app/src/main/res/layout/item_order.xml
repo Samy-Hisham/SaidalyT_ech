@@ -3,10 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/snow"
+    android:layout_marginBottom="@dimen/_8sdp"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:padding="@dimen/_4sdp"
         android:layout_height="match_parent">
 
         <ImageView
@@ -21,67 +24,86 @@
             tools:src="@drawable/fake" />
 
         <TextView
-            android:id="@+id/name_item"
+            android:id="@+id/txt_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
-            android:textColor="@color/black"
+            android:text="@string/name"
+            android:textColor="@color/Main_Color"
             android:textSize="@dimen/_12ssp"
             app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintTop_toTopOf="@id/img_item" />
+
+        <TextView
+            android:id="@+id/name_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintStart_toEndOf="@id/txt_name"
             app:layout_constraintTop_toTopOf="@id/img_item"
             tools:text="ACC 200mg 20 sachets" />
+
+        <TextView
+            android:id="@+id/txt_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginBottom="@dimen/_12sdp"
+            android:text="@string/total"
+            android:textColor="@color/Main_Color"
+            android:textSize="@dimen/_10ssp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_item"
+            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintTop_toTopOf="@+id/textView2" />
 
         <TextView
             android:id="@+id/price_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginStart="@dimen/_8sdp"
             android:layout_marginBottom="@dimen/_12sdp"
             android:textColor="@color/black"
             android:textSize="@dimen/_10ssp"
             app:layout_constraintBottom_toBottomOf="@+id/img_item"
-            app:layout_constraintStart_toEndOf="@id/img_item"
+            app:layout_constraintStart_toEndOf="@id/txt_price"
             app:layout_constraintTop_toTopOf="@+id/textView2"
             tools:text="140.00 EGP" />
 
-
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_sub"
-            android:layout_width="@dimen/_35sdp"
+            android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:background="@drawable/bg_right"
-            app:icon="@drawable/ic_horizontal_rule_24"
-            app:iconPadding="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_12sdp"
+            android:background="@drawable/ic_remove_circle_24"
             app:layout_constraintBottom_toBottomOf="@+id/img_item"
-            app:layout_constraintEnd_toEndOf="parent"
-            />
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/textView2"
             android:layout_width="@dimen/_35sdp"
-            android:layout_height="0dp"
-            android:textColor="@color/black"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/_2sdp"
             android:textAlignment="center"
+            android:textColor="@color/black"
             android:textSize="@dimen/_16ssp"
-            tools:text="16"
             app:layout_constraintBottom_toBottomOf="@+id/btn_sub"
             app:layout_constraintEnd_toStartOf="@+id/btn_sub"
-            app:layout_constraintTop_toTopOf="@id/btn_sub" />
+            app:layout_constraintTop_toTopOf="@id/btn_sub"
+            tools:text="16" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btn_add"
-            android:layout_width="@dimen/_35sdp"
+            android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
+            android:background="@drawable/ic_add_circle_24"
             android:drawablePadding="@dimen/_10sdp"
-            app:icon="@drawable/ic_add_24"
-            android:background="@drawable/bg_left"
+            android:gravity="center"
+            app:iconPadding="@dimen/_12sdp"
             app:layout_constraintEnd_toStartOf="@+id/textView2"
-            app:layout_constraintTop_toTopOf="@id/btn_sub"
-            />
+            app:layout_constraintTop_toTopOf="@id/btn_sub" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 </androidx.cardview.widget.CardView>
