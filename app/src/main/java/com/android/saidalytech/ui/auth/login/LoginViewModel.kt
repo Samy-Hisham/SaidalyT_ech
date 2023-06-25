@@ -16,9 +16,6 @@ import javax.inject.Inject
 class LoginViewModel
 @Inject constructor(private val webServices: WebServices) : ViewModel() {
 
-    //    private var _successMD = MutableLiveData<ModelLogin>()
-//    val successMD get() = _successMD
-//
     private var _failureMD = MutableLiveData<ModelFailure>()
     val failureMD get() = _failureMD
 
@@ -27,7 +24,6 @@ class LoginViewModel
 
     private var _loginLiveData = MutableLiveData<ModelLoginRegisterResponses>()
     val loginLiveData get() = _loginLiveData
-
 
     fun login(email: String, pass: String) {
 

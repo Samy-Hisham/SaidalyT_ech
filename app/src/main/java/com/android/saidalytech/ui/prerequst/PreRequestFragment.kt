@@ -10,9 +10,8 @@ import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.adapter.AdapterPreOrderRecycle
 import com.android.saidalytech.databinding.FragmentPreRequestBinding
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
-
 @AndroidEntryPoint
 class PreRequestFragment : Fragment() {
 
@@ -20,11 +19,9 @@ class PreRequestFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: PreOrderViewModel by viewModels()
-
     private val adapterPreOrderRecycle: AdapterPreOrderRecycle by lazy { AdapterPreOrderRecycle() }
 
     var userId = ""
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,

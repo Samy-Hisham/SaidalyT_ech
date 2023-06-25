@@ -36,6 +36,26 @@ interface WebServices {
     ): ModelPreOrder
 
     @POST("Order/AddOrder")
-    suspend fun sendOrder(@Body model: ModelAddOrder): ModelAddOrder
+    suspend fun sendOrder(@Body model: ModelAddOrder)
+
+//    @POST("Authorization/RegisterUser")
+//    suspend fun register(
+//        @Body modelRegister: ModelRegister,
+//    ): ModelLoginRegisterResponses
+
+    @POST("Authorization/EditUser")
+    suspend fun editInfo(
+        @Body modelRegister: ModelRegister
+    )
+
+    @POST("Authorization/ResetMyPassword")
+    suspend fun resetPassword(
+      @Body modelForgetPassword: ModelForgetPassword
+    )
+
+    @GET("Order/GetRosheta/{id}")
+    suspend fun addRosheta(
+        @Path("id") id: String,
+    ): ModelRosheta
 
 }

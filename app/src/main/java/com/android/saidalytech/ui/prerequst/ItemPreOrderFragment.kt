@@ -10,7 +10,7 @@ import com.android.saidalytech.R
 import com.android.saidalytech.adapter.AdapterItemSelectedRecycle
 import com.android.saidalytech.databinding.FragmentItemPreOrderBinding
 import com.android.saidalytech.model.Item
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

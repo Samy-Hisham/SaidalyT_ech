@@ -37,6 +37,11 @@
     <string name="previous_order">Previous Order</string>
     <string name="date">Date:</string>
     <string name="detail_order">Detail Order</string>
+    <string name="changes_saved">Changes Saved</string>
+    <string name="send">send</string>
+    <string name="detail_rosheta">Detail Rosheta</string>
+    <string name="rosheta_id">Rosheta Id</string>
+    <string name="save">save</string>
 
     <string-array name="spinnergender">
         <item>Gender</item>

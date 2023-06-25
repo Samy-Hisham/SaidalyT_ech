@@ -16,17 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/progress"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:progressTint="@color/Main_Color"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/background_down"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/background_down"
-        app:layout_constraintTop_toBottomOf="@+id/txt_register" />
-
     <ImageView
         android:id="@+id/icon"
         android:layout_width="@dimen/_120sdp"
@@ -121,8 +110,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_12sdp"
-        android:visibility="gone"
         android:src="@drawable/ic_eye"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="@+id/edit_pass"
         app:layout_constraintEnd_toEndOf="@+id/edit_pass"
         app:layout_constraintTop_toTopOf="@+id/edit_pass" />
@@ -136,12 +125,24 @@
         app:layout_constraintStart_toStartOf="@+id/edit_pass"
         app:layout_constraintTop_toTopOf="@+id/edit_pass" />
 
+    <TextView
+        android:id="@+id/txt_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_12sdp"
+        android:text="Forget password"
+        android:textColor="@color/Main_Color"
+        android:textSize="@dimen/_13ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pass"
+        tools:ignore="HardcodedText" />
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/_12sdp"
-        android:layout_marginTop="@dimen/_24sdp"
+        android:layout_marginTop="@dimen/_12sdp"
         android:background="@drawable/edit_button"
         android:text="@string/login"
         android:textColor="@color/white"
@@ -149,7 +150,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_pass"
+        app:layout_constraintTop_toBottomOf="@+id/txt_forget"
         app:layout_constraintWidth_percent="0.5" />
 
     <TextView
@@ -164,6 +165,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progressTint="@color/Main_Color"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/background_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/background_down"
+        app:layout_constraintTop_toBottomOf="@+id/txt_register" />
+
     <ImageView
         android:id="@+id/background_down"
         android:layout_width="0dp"
@@ -173,6 +185,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

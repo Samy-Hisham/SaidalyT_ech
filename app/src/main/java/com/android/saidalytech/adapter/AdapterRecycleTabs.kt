@@ -8,8 +8,8 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.android.saidalytech.R
 import com.android.saidalytech.databinding.ItemRecycleTapsBinding
+import com.android.saidalytech.databinding.ItemTabBinding
 import com.android.saidalytech.model.ModelAllCategoriesItem
-
 class AdapterRecycleTabs : RecyclerView.Adapter<AdapterRecycleTabs.Holder>() {
 
     var list: List<ModelAllCategoriesItem>? = null
@@ -19,27 +19,23 @@ class AdapterRecycleTabs : RecyclerView.Adapter<AdapterRecycleTabs.Holder>() {
     var selectedItem = 0
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding = ItemRecycleTapsBinding
+        val binding = ItemTabBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
 
-    @SuppressLint("ResourceAsColor")
+    @SuppressLint("ResourceAsColor", "ResourceType")
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
         val data = list?.get(position)
 
         holder.binding.apply {
 
-
             if (selectedItem == position) {
-
-                textType.setTextColor(ContextCompat.getColor(context!!, R.color.white))
-            } else {
-
                 textType.setTextColor(ContextCompat.getColor(context!!, R.color.black))
+            } else {
+                textType.setTextColor(ContextCompat.getColor(context!!, R.color.gray))
             }
-
             textType.text = data?.name
         }
     }
@@ -47,7 +43,7 @@ class AdapterRecycleTabs : RecyclerView.Adapter<AdapterRecycleTabs.Holder>() {
     override fun getItemCount(): Int = list?.size ?: 0
 
     @SuppressLint("NotifyDataSetChanged")
-    inner class Holder(val binding: ItemRecycleTapsBinding) :
+    inner class Holder(val binding: ItemTabBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
         init {

@@ -30,16 +30,16 @@ class ProfileFragment : Fragment() {
         _binding = FragmentProfileBinding.bind(view)
 
         showData()
-//        onClick()
+        onClick()
     }
 
-//    private fun onClick() {
-//
-//        binding.logout.setOnClickListener {
-//            MySharedPreference.setUserTOKEN(null.toString())
-//            findNavController().navigate(R.id.action_profileFragment_to_splashFragment)
-//        }
-//    }
+    private fun onClick() {
+
+        binding.btn.setOnClickListener {
+            MySharedPreference.setUserTOKEN(null.toString())
+            findNavController().navigate(R.id.action_profileFragment_to_editInfoFragment)
+        }
+    }
 
     private fun showData() {
 

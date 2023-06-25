@@ -12,11 +12,9 @@ import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.adapter.AdapterItemRecycle
 import com.android.saidalytech.databinding.FragmentAddOrderBinding
-import com.android.saidalytech.model.ItemX
 import com.android.saidalytech.model.ModelItemDetail
-import com.android.saidalytech.model.ModelOrder
 import com.android.saidalytech.ui.home.HomeViewModel
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,10 +45,18 @@ class AddOrderFragment : Fragment() {
 
         observe()
         onClick()
+        observeForUi()
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun observeForUi() {
+        sharedViewModel.currentItemActionIndex.observe(viewLifecycleOwner) { itemX ->
+            adapter.setList(sharedViewModel.shoppingCartItems)
+            adapter.notifyDataSetChanged()
+        }
     }
 
     private fun observe() {
-
         adapter.setList(sharedViewModel.shoppingCartItems)
         binding.recycle.adapter = adapter
     }
@@ -62,19 +68,12 @@ class AddOrderFragment : Fragment() {
         }
 
         binding.buy.setOnClickListener {
-            if (list == null) {
-                showToast(requireContext(), "No Items")
-            } else {
-                showToast(requireContext(), "yes Items")
-            }
-        }
-
-        binding.buy.setOnClickListener {
 
             orderViewModel.sendOrder(sharedViewModel.shoppingCartItems)
 
             orderViewModel.successMD.observe(viewLifecycleOwner) {
-                showToast(requireContext(), "Done")
+                showToast(requireContext(), "Your Order Is Added")
+                findNavController().navigate(R.id.action_addOrderFragment_to_homeFragment)
 
             }
             orderViewModel.failureMD.observe(viewLifecycleOwner) {
@@ -88,5 +87,17 @@ class AddOrderFragment : Fragment() {
                 }
             }
         }
+
+        adapter.onUserClicks = object : AdapterItemRecycle.OnUserClicks {
+            override fun onClickPlus(id: Int) {
+                sharedViewModel.incrementItemQuantity(id)
+            }
+
+            override fun onClickMines(id: Int) {
+                sharedViewModel.decrementItemQuantity(id)
+            }
+
+        }
     }
+
 }

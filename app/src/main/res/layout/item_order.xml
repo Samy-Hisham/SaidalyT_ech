@@ -30,7 +30,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:text="@string/name"
             android:textColor="@color/Main_Color"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintStart_toEndOf="@id/img_item"
             app:layout_constraintTop_toTopOf="@id/img_item" />
 
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_8sdp"
             android:textColor="@color/black"
-            android:textSize="@dimen/_12ssp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintStart_toEndOf="@id/txt_name"
             app:layout_constraintTop_toTopOf="@id/img_item"
             tools:text="ACC 200mg 20 sachets" />

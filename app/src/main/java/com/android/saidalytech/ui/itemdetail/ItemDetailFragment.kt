@@ -1,21 +1,18 @@
 package com.android.saidalytech.ui.itemdetail
 
 import android.annotation.SuppressLint
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.databinding.FragmentItemDetailBinding
 import com.android.saidalytech.model.ModelDataItem
 import com.android.saidalytech.ui.home.HomeViewModel
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
 import com.bumptech.glide.Glide
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -27,7 +24,6 @@ class ItemDetailFragment : Fragment() {
 
     private val itemDetailViewModel: ItemDetailViewModel by activityViewModels()
     private val sharedViewModel: HomeViewModel by activityViewModels()
-
 
     var itemId = 0
 

@@ -18,7 +18,7 @@ import javax.inject.Inject
 class OrderViewModel
 @Inject constructor(private val webServices: WebServices) : ViewModel() {
 
-    private var _successMD = SingleLiveEvent<ModelAddOrder>()
+    private var _successMD = SingleLiveEvent<Unit>()
     val successMD get() = _successMD
 
     private var _failureMD = SingleLiveEvent<ModelFailure>()
@@ -33,7 +33,11 @@ class OrderViewModel
 
             try {
 
-                val newOrder = ModelAddOrder(customerId = "10", items = items, userId = MySharedPreference.getUserId().toString())
+                val newOrder = ModelAddOrder(
+                    customerId = MySharedPreference.getCustomerId().toString(),
+                    items = items,
+                    userId = MySharedPreference.getUserId().toString()
+                )
                 val data = webServices.sendOrder(newOrder)
                 successMD.postValue(data)
                 progressMD.postValue(false)
@@ -45,5 +49,4 @@ class OrderViewModel
             }
         }
     }
-
 }

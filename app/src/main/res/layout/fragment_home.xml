@@ -18,17 +18,18 @@
         android:id="@+id/profile"
         android:layout_width="@dimen/_30sdp"
         android:layout_height="@dimen/_30sdp"
-        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginStart="24dp"
         android:src="@drawable/ic_account_circle_24"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/toolbar" />
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.558" />
 
     <ImageView
         android:id="@+id/pre_cart"
         android:layout_width="@dimen/_30sdp"
-        android:layout_marginEnd="@dimen/_12sdp"
         android:layout_height="@dimen/_30sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
         android:src="@drawable/ic_shopping_cart_24"
         app:layout_constraintBottom_toBottomOf="@id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
@@ -87,6 +88,25 @@
         app:spanCount="2"
         tools:listitem="@layout/item_recycle" />
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn"
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_50sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:background="@drawable/button"
+        app:layout_constraintBottom_toBottomOf="@+id/recycle_item"
+        app:layout_constraintEnd_toEndOf="@+id/recycle_item" />
+
+    <ImageView
+        android:layout_width="@dimen/_50sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:elevation="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn"
+        android:src="@drawable/ic_rosheta_24"
+        app:layout_constraintEnd_toEndOf="@+id/btn"
+        app:layout_constraintStart_toStartOf="@+id/btn"
+        app:layout_constraintTop_toTopOf="@+id/btn" />
+
     <ProgressBar
         android:id="@+id/progress"
         android:layout_width="wrap_content"
@@ -96,4 +116,5 @@
         app:layout_constraintEnd_toEndOf="@+id/recycle_item"
         app:layout_constraintStart_toStartOf="@id/recycle_item"
         app:layout_constraintTop_toTopOf="@id/recycle_item" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

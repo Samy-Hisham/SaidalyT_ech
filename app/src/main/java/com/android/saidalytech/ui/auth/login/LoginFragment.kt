@@ -12,7 +12,7 @@ import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.databinding.FragmentLoginBinding
 import com.android.saidalytech.uitls.MySharedPreference
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,6 +39,10 @@ class LoginFragment : Fragment() {
     }
 
     private fun onClick() {
+
+        binding.txtForget.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_forgetPassFragment)
+        }
 
         binding.txtRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
@@ -93,6 +97,7 @@ class LoginFragment : Fragment() {
                 setUserEmail(data.email)
                 setUserTOKEN(data.token)
                 setUserId(data.userId)
+                setCustomerId(data.customerId.toString())
             }
 
             findNavController().navigate(R.id.action_loginFragment_to_homeFragment)

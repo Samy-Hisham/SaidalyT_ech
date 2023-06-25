@@ -22,7 +22,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            tools:src="@drawable/ic_baseline_shopping_cart_24" />
+            tools:src="@drawable/ic_fake" />
 
         <TextView
             android:id="@+id/name"
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
             android:textColor="@color/Main_Color"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintStart_toEndOf="@id/img_item"
             app:layout_constraintTop_toTopOf="@id/img_item"
             android:text="@string/name"
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_12sdp"
             android:textColor="@color/black"
-            android:textSize="@dimen/_14sdp"
+            android:textSize="@dimen/_10ssp"
             app:layout_constraintStart_toEndOf="@id/name"
             app:layout_constraintTop_toTopOf="@id/img_item"
             tools:text="Panadol" />

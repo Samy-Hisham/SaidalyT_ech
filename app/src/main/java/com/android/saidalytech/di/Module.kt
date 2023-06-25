@@ -1,7 +1,7 @@
 package com.android.saidalytech.di
 
 import com.android.saidalytech.network.WebServices
-import com.android.saidalytech.uitls.Const
+import com.android.saidalytech.utils.Const
 import com.android.saidalytech.uitls.MySharedPreference
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import dagger.Provides

@@ -28,8 +28,6 @@ class SplashFragment : Fragment() {
 
 //            whichDestination()
             findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-
-
         }, 3000)
     }
 

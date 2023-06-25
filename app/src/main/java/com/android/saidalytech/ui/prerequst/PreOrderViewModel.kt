@@ -10,7 +10,6 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
-
 @Suppress("NAME_SHADOWING")
 @HiltViewModel
 class PreOrderViewModel

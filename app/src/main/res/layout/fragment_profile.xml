@@ -16,28 +16,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/logout"-->
-<!--        android:layout_width="@dimen/_40sdp"-->
-<!--        android:layout_height="@dimen/_40sdp"-->
-<!--        android:layout_marginTop="@dimen/_12sdp"-->
-<!--        android:src="@drawable/ic__logout_24"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        android:layout_marginEnd="@dimen/_12sdp"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
     <TextView
         android:id="@+id/txt_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        tools:text="Menna Seif"
         android:textColor="@color/black"
         android:textSize="@dimen/_22ssp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/background"
-        />
+        tools:text="Menna Seif" />
 
     <TextView
         android:id="@+id/txt_email"
@@ -45,11 +35,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        tools:text="mennaSeif934@gmail.com"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/email"
-        app:layout_constraintTop_toBottomOf="@+id/txt_name" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_name"
+        tools:text="mennaSeif934@gmail.com" />
 
     <ImageView
         android:id="@+id/email"
@@ -68,11 +58,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        tools:text="18ST:masrElgideda-cairo"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/address"
-        app:layout_constraintTop_toBottomOf="@+id/txt_email" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_email"
+        tools:text="18ST: port said cairo" />
 
     <ImageView
         android:id="@+id/address"
@@ -104,11 +94,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        tools:text="01558280211"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/phone"
-        app:layout_constraintTop_toBottomOf="@+id/txt_address" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_address"
+        tools:text="01558280211" />
 
     <ImageView
         android:id="@+id/gender"
@@ -128,23 +118,34 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_20sdp"
         android:layout_marginTop="@dimen/_32sdp"
-        tools:text="Male"
         android:textColor="@color/black"
         android:textSize="@dimen/_18ssp"
         app:layout_constraintStart_toEndOf="@+id/gender"
-        app:layout_constraintTop_toBottomOf="@+id/txt_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_phone"
+        tools:text="Male" />
 
     <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_12sdp"
         android:text="@string/saidaly_tech"
         android:textColor="@color/Main_Color"
         android:textSize="@dimen/_24ssp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/background_down"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/background_down" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/white"
+        android:src="@drawable/ic_edit_24"
+        android:layout_marginEnd="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@+id/background_down"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/background_down"

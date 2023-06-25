@@ -4,17 +4,15 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.android.saidalytech.R
-import com.android.saidalytech.databinding.ItemOrderBinding
+import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.android.saidalytech.databinding.ItemPerOrderBinding
 import com.android.saidalytech.model.*
-import com.bumptech.glide.Glide
-
+import java.text.SimpleDateFormat
+import java.util.Locale
 class AdapterPreOrderRecycle : RecyclerView.Adapter<AdapterPreOrderRecycle.Holder>() {
 
     var list: MutableList<ModelPreOrderItem>? = null
     var onUserClicks: OnUserClicks? = null
-
     @SuppressLint("NotifyDataSetChanged")
     @JvmName("setList1")
     fun setList(list: MutableList<ModelPreOrderItem>?) {
@@ -22,10 +20,10 @@ class AdapterPreOrderRecycle : RecyclerView.Adapter<AdapterPreOrderRecycle.Holde
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder {
-        val binding = ItemPerOrderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding =
+            ItemPerOrderBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return Holder(binding)
     }
-
     @SuppressLint("NotifyDataSetChanged")
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
@@ -33,7 +31,12 @@ class AdapterPreOrderRecycle : RecyclerView.Adapter<AdapterPreOrderRecycle.Holde
 
         holder.binding.apply {
             txtOrder.text = data?.orderId.toString()
-            txtDate.text = data?.date
+
+            if (data?.date?.length == 23){
+                txtDate.text = data.date.dropLast(13)
+            }else{
+                txtDate.text = data?.date?.dropLast(12)
+            }
         }
     }
 
@@ -46,6 +49,7 @@ class AdapterPreOrderRecycle : RecyclerView.Adapter<AdapterPreOrderRecycle.Holde
             }
         }
     }
+
     interface OnUserClicks {
         fun onClick(id: Int)
     }

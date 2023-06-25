@@ -13,9 +13,9 @@ import androidx.navigation.fragment.findNavController
 import com.android.saidalytech.R
 import com.android.saidalytech.databinding.FragmentRegisterBinding
 import com.android.saidalytech.model.ModelRegister
-import com.android.saidalytech.uitls.Const
+import com.android.saidalytech.utils.Const
 import com.android.saidalytech.uitls.MySharedPreference
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -23,9 +23,7 @@ class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
-
     private val registerViewModel: RegisterViewModel by viewModels()
-
     var flag: Boolean = false
 
     override fun onCreateView(
@@ -105,23 +103,28 @@ class RegisterFragment : Fragment() {
             } else if (gender.equals("Gender")) {
                 Toast.makeText(requireContext(), "select your gender", Toast.LENGTH_SHORT).show()
             } else {
-                registerViewModel.register(ModelRegister(address = address,
-                    age = age,
-                    confirmPassword = confirmedPass,
-                    email = email,
-                    fullName = name,
-                    gender = gender.toString(),
-                    password = pass,
-                    phone = phone,
-                    role = Const.USER))
+                registerViewModel.register(
+                    ModelRegister(
+                        address,
+                        age.toInt(),
+                        confirmedPass,
+                        email,
+                        name,
+                        gender as String,
+                        id = "",
+                        pass,
+                        phone,
+                        role = Const.USER
+                    )
+                )
 
-                observe(gender.toString(), phone, address)
+                observe(gender.toString(), phone, address, age)
             }
         }
     }
 
 
-    private fun observe(gender: String, phone: String, address: String) {
+    private fun observe(gender: String, phone: String, address: String, age: String) {
 
         registerViewModel.apply {
 
@@ -136,11 +139,12 @@ class RegisterFragment : Fragment() {
                     setUserEmail(data.email)
                     setUserTOKEN(data.token)
                 }
-                if (flag == true) {
+                if (flag) {
                     MySharedPreference.apply {
                         setUserGender(gender)
                         setUserAddress(address)
                         setUserPhone(phone)
+                        setUserAge(age)
                     }
                 }
 
@@ -160,5 +164,4 @@ class RegisterFragment : Fragment() {
             }
         }
     }
-
 }

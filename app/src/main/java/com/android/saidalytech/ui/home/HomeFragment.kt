@@ -1,11 +1,12 @@
 package com.android.saidalytech.ui.home
 
-import android.annotation.SuppressLint
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.widget.doOnTextChanged
+import android.widget.Button
+import android.widget.EditText
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
@@ -15,9 +16,10 @@ import com.android.saidalytech.adapter.AdapterRecyclerItems
 import com.android.saidalytech.databinding.FragmentHomeBinding
 import com.android.saidalytech.model.ModelAllCategoriesItem
 import com.android.saidalytech.model.ModelData
-import com.android.saidalytech.model.ModelDataItem
 import com.android.saidalytech.uitls.MySharedPreference
-import com.android.saidalytech.uitls.showToast
+import com.android.saidalytech.utils.showToast
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.button.MaterialButton
 import dagger.hilt.android.AndroidEntryPoint
 
 @Suppress("NAME_SHADOWING")
@@ -27,14 +29,13 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+
     private val sharedViewModelViewModel: HomeViewModel by activityViewModels()
     private val adapterRecyclerItems: AdapterRecyclerItems by lazy { AdapterRecyclerItems() }
     private val adapterRecycleTabs: AdapterRecycleTabs by lazy { AdapterRecycleTabs() }
 
     var data: ModelData? = null
     var id: Int? = null
-
-    private lateinit var list : MutableList<ModelDataItem>
 
     var flag: Boolean = false
 
@@ -58,6 +59,37 @@ class HomeFragment : Fragment() {
 
     private fun onClick() {
 
+        binding.btn.setOnClickListener {
+            val bsDialog = BottomSheetDialog(requireContext())
+            val vieww = layoutInflater.inflate(R.layout.bottom_sheet, null)
+
+            val btnAdd = vieww.findViewById<MaterialButton>(R.id.add)
+            val btnClose = vieww.findViewById<ImageView>(R.id.close)
+
+            btnAdd.setOnClickListener {
+
+                val id = vieww.findViewById<EditText>(R.id.edit_search)
+
+                val code = id.text.toString()
+
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToRoshtaFragment(
+                        code
+                    )
+                )
+                bsDialog.dismiss()
+            }
+
+            btnClose.setOnClickListener {
+
+                bsDialog.dismiss()
+            }
+
+            bsDialog.setCancelable(true)
+            bsDialog.setContentView(vieww)
+            bsDialog.show()
+        }
+
         binding.profile.setOnClickListener {
             flag = false
             findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
@@ -80,14 +112,20 @@ class HomeFragment : Fragment() {
             override fun onClick(id: Int) {
                 flag = false
                 adapterRecycleTabs.selectedItem = id
-                findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToItemDetailFragment(
-                    id))
+                findNavController().navigate(
+                    HomeFragmentDirections.actionHomeFragmentToItemDetailFragment(
+                        id
+                    )
+                )
             }
         }
 
         binding.preCart.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToPreRequestFragment(
-                MySharedPreference.getUserId().toString()))
+            findNavController().navigate(
+                HomeFragmentDirections.actionHomeFragmentToPreRequestFragment(
+                    MySharedPreference.getUserId().toString()
+                )
+            )
         }
 
 //        binding.editSearch.doOnTextChanged { text, start, before, count ->
@@ -176,7 +214,6 @@ class HomeFragment : Fragment() {
                 mulist.add(0, ModelAllCategoriesItem(0, "All"))
 
                 adapterRecycleTabs.list = mulist
-
                 binding.recycleTabs.adapter = adapterRecycleTabs
             }
         }

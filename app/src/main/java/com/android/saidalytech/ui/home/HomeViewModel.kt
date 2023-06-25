@@ -1,6 +1,8 @@
 package com.android.saidalytech.ui.home
 
+import android.content.ContentValues
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -68,14 +70,14 @@ class HomeViewModel
     val failureCategoryMD get() = _failureCategoryMD
 
 
-    fun getAllCategories(data: String){
+    fun getAllCategories(data: String) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
 
                 val data = webServices.getAllCategories(data)
                 successCategoryMD.postValue(data)
 
-            }catch (e: Exception){
+            } catch (e: Exception) {
 
                 failureCategoryMD.postValue(ModelFailure(e.toString()))
             }
@@ -86,18 +88,18 @@ class HomeViewModel
     private var _shoppingCartItems = mutableListOf<ItemX>()
     val shoppingCartItems get() = _shoppingCartItems.toList()
 
-    fun addItemToCart(item: ModelDataItem){
+    fun addItemToCart(item: ModelDataItem) {
         val hasProduct = _shoppingCartItems.any { itemX ->
             itemX.itemId == item.itemId
         }
 
-      if (hasProduct){
-          val currentClickedItem = _shoppingCartItems.find { itemX ->
-              itemX.itemId == item.itemId
-          }
-          currentClickedItem?.qty?.plus(1)
-          return
-      }
+        if (hasProduct) {
+            val currentClickedItem = _shoppingCartItems.find { itemX ->
+                itemX.itemId == item.itemId
+            }
+            currentClickedItem?.qty?.plus(1)
+            return
+        }
 
         val newItemToAdd = ItemX(
             item.itemId,
@@ -111,38 +113,59 @@ class HomeViewModel
         return
     }
 
-//    private var _shoppingCartItems = mutableListOf<ModelDataItem>()
-//    val shoppingCartItems get() = _shoppingCartItems.toList()
-//
-//    fun addItemToCart(item: ModelDataItem): ModelAddOrder {
-//        val hasProduct = _shoppingCartItems.any { modelDataItem ->
-//            modelDataItem.itemId == item.itemId
-//        }
-//
-//        if (hasProduct){
-//            val currentClickedItem = _shoppingCartItems.find { modelDataItem ->
-//                modelDataItem.itemId == item.itemId
-//            }
-//            currentClickedItem?.?.plus(1)
-//            return
-//        }
-//
-//        val newItemToAdd = ModelOrder(
-//            item.itemId,
-//            item.itemName,
-//            price_Item = item.salesPrice,
-//            quantity_Item = 1,
-//            image_Item = item.imageName
-//        )
-//        _shoppingCartItems.add(newItemToAdd)
-//        return
-//    }
-
     @RequiresApi(Build.VERSION_CODES.N)
-    fun removeItemFromCartByItemId(itemId: Int){
+    fun removeItemFromCartByItemId(itemId: Int) {
         _shoppingCartItems.removeIf { item ->
             item.itemId == itemId
         }
         return
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+    private var _currentItemActionIndex = MutableLiveData<Unit>()
+    val currentItemActionIndex get() = _currentItemActionIndex
+
+    fun incrementItemQuantity(itemId: Int){
+        val itemToUpdate = _shoppingCartItems.first { itemX -> itemX.itemId == itemId }
+        val newQuantity = itemToUpdate.qty.plus(1)
+        Log.e(ContentValues.TAG, "product before incrementItemQuantity: ${itemToUpdate.qty}", )
+
+        val itemWithNewQuantity = ItemX(
+            itemToUpdate.itemId,
+            itemToUpdate.notes,
+            itemToUpdate.price,
+            newQuantity,
+            itemToUpdate.itemImage,
+            itemToUpdate.itemName
+        )
+        val itemIdx = _shoppingCartItems.indexOfFirst { itemX -> itemX.itemId == itemId }
+        _shoppingCartItems[itemIdx] = itemWithNewQuantity
+        _currentItemActionIndex.postValue(Unit)
+        Log.e(ContentValues.TAG, "product after incrementItemQuantity: ${itemWithNewQuantity.qty}", )
+    }
+
+    fun decrementItemQuantity(itemId: Int){
+        val itemToUpdate = _shoppingCartItems.first { itemX -> itemX.itemId == itemId }
+        val newQuantity = itemToUpdate.qty.toInt() - 1
+        Log.e(ContentValues.TAG, "product before decrementItemQuantity: ${itemToUpdate.qty}", )
+
+        if (newQuantity < 1){
+            val itemIdx = _shoppingCartItems.indexOfFirst { itemX -> itemX.itemId == itemId }
+            _shoppingCartItems.remove(itemToUpdate)
+            _currentItemActionIndex.postValue(Unit)
+            return
+        }
+        val itemWithNewQuantity = ItemX(
+            itemToUpdate.itemId,
+            itemToUpdate.notes,
+            itemToUpdate.price,
+            newQuantity,
+            itemToUpdate.itemImage,
+            itemToUpdate.itemName
+        )
+        val itemIdx = _shoppingCartItems.indexOfFirst { itemX -> itemX.itemId == itemId }
+        _shoppingCartItems[itemIdx] = itemWithNewQuantity
+        _currentItemActionIndex.postValue(Unit)
+        Log.e(ContentValues.TAG, "product after decrementItemQuantity: ${itemWithNewQuantity.qty}", )
     }
 }
