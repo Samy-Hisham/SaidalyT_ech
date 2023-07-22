@@ -1,4 +1,4 @@
-# SaidalyT_ech  <br  />
+# Saidaly Tech  <br  />
 
 ##### A program designed to order medicines from mobile <br />
 
